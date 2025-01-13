@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dmarketforces - Courses</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to dmarketforces</h1>
+        <p>Your trusted place for online courses!</p>
+    </header>
+    <main>
+        <section class="course-list">
+            <h2>Our Courses</h2>
+            <div class="course">
+                <h3>Front and Backend Development</h3>
+                <p>Learn how to build modern web applications from scratch.</p>
+            </div>
+            <div class="course">
+                <h3>Cybersecurity</h3>
+                <p>Protect your systems and learn about ethical hacking.</p>
+            </div>
+            <div class="course">
+                <h3>Data Analytics</h3>
+                <p>Transform data into actionable insights with our analytics course.</p>
+            </div>
+            <div class="course">
+                <h3>And More!</h3>
+                <p>Explore other exciting courses we offer!</p>
+            </div>
+        </section>
+
+        <section class="registration">
+            <h2>Register for a Course</h2>
+            <form id="registration-form" method="POST" action="/submit" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">--Please choose an option--</option>
+                    <option value="frontend-backend">Front and Backend Development</option>
+                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="data-analytics">Data Analytics</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+            <p id="response-message"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 dmarketforces. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
