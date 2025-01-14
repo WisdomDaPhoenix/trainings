@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    overflowX: hidden;
 }
 
 header {
@@ -95,12 +96,25 @@ h1 {
     white-space: nowrap;
     overflow: hidden;
     border-right: 0.05em solid black; /* Simulate the cursor */
-    animation: typing 5s 0.8s 1 normal both, blink 0.75s step-end infinite; /* Typing animation + cursor blink */
+    animation: typing 8s 0.8s infinite normal both, blink 0.75s step-end infinite; /* Typing animation + cursor blink */
 }
 
-
+.coursebox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  float: left;
+  align-items: center;
+  width: 21rem;
+  height: 15rem;
+  box-shadow: 0 0 12px 3px hsla(0, 0%, 0%, 0.5);
+  border-radius: 8px;
+  padding: 4px;
+  margin-right: 10rem;
+}
 
 .course-list {
+    display: block;
     padding: 20px;
     margin: 10px;
     background: #fff;
