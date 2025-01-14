@@ -6,15 +6,21 @@
     <title>dmarketforces - Courses</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
 </head>
+
 <body>
     <header>
         <h1>Welcome to </h1>  <span class="dxy">DXY.IO</span>
         <p class="ptyping">Your trusted place for tech courses!</p>
+        <a href="#registration-form">
+        <button type="button" class="regbtn">REGISTER NOW</button>
+        </a>
     </header>
     <main>
         <section class="course-list" style="display: flex; flex-direction: row; width: 95%;
           height: 17rem; padding: 23px; margin: 10px;">
+            <img src="{{ url_for('static',filename='secretary.png') }}" alt="Seretary pic">
             <div class="coursebox">
                 Front-end Development
                 <p>Kick-start your journey into the exciting world of web development? Learn to craft stunning, responsive websites. </p>
@@ -31,13 +37,15 @@
                 <span class="">Duration: 3 months</span>
             </div>
         </section>
-         <section class="course-list">
-             Why choose us!
-             <p>We offer a wide range of courses. </p>
-             Industry-Relevant Content | Expert Trainers | Certification & Recognition | Interactive and Engaging
+         <section class="course-list" style="display: flex; align-items: center;
+                justify-content: space-between; padding: 2rem; background-color: #FAEBD7;">
+
+             <img src="{{ url_for('static',filename='whyus.png') }}" alt="Course Illustration" class="course-image">
+             <span style="font-size: 1.2rem; text-align: center;"> Industry-Relevant Content | Expert Trainers | Certification & Recognition | Interactive and Engaging </span>
+
         </section>
-        <section class="course-list">
-            <h2>Our Courses</h2>
+        <section class="course-list" style="background-color: #000000;">
+            <h2 style="color: #FA8072;">Our Courses</h2>
             <div class="course">
                 <h3> <span class="material-symbols-outlined" style="margin-right: 14px;">globe_book </span> Front and Backend Development</h3>
                 <p>Learn how to build modern web applications from scratch.</p>
