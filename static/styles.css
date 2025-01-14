@@ -113,6 +113,13 @@ h1 {
   margin-right: 10rem;
 }
 
+.coursebox p {
+    font-family: Noto Sans Light;
+    line-height: 20px;
+    text-align: center;
+
+}
+
 .course-list {
     display: block;
     padding: 20px;
