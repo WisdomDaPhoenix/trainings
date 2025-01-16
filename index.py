@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, send_from_directory
 from flask_mail import Mail, Message
+import json
 
 
 app = Flask(__name__)
@@ -14,6 +15,11 @@ app.config['SECRET_KEY'] = "bossDatron24"
 
 mail = Mail(app)
 
+with open('clientsdata/clients.json', 'r') as file:
+    content = json.load(file)
+
+
+
 @app.route("/home")
 @app.route("/")
 def home():
@@ -22,9 +28,21 @@ def home():
 
 @app.route("/submit", methods=["POST"])
 def submitData():
+    open("clientsdata/clients.json").close()
+
     name = request.form['name']
     course = request.form['course']
+    phone = request.form['phone']
     email = request.form['email']
+
+    d = {"Name": name,
+         "Course": course,
+         "Phone": phone,
+         "Email": email}
+    with open('clientsdata/clients.json','w') as file:
+        content["data"].append(d)
+        json.dump(content, file)
+
     subject = f"Acknowledgement of Course Registration"
     
     mailbody = f"""Thank you {name} for registering your interest in our training course \n\n 
@@ -41,7 +59,12 @@ def submitData():
     except Exception as e:
         return f"Send failure: {e}"
 
-
+@app.route("/courses",methods=["GET"])
+def courses():
+    try:
+        return send_from_directory('static','TRAINING BROCHURE.pdf')
+    except FileNotFoundError as f:
+        return f"Courses not available: {f}"
 
 
 if __name__ == "__main__":

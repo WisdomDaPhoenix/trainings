@@ -1,5 +1,5 @@
 body {
-    font-family: Noto Sans Balinese;
+    font-family: NotoSans Balinese Regular;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -7,8 +7,8 @@ body {
 }
 
 header {
-    background: #333;
-    color: #fff;
+    background: #000000;
+    color: #ffffff;
     padding: 20px 0;
     text-align: center;
     height: 18rem;
@@ -56,8 +56,8 @@ h1 {
 
 
 h2 {
-
     text-align: center;
+    color: #DA70D6;
 }
 
 
@@ -65,9 +65,9 @@ h2 {
     display: inline-block;
     font-family: Noto Sans Balinese;
     margin: 0;
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: bold;
-    color: #FA8072;
+    color: #DA70D6;
     transform: translateX(100%);
     animation-name: slide-in-right;
     animation-duration: 17s;
@@ -75,6 +75,7 @@ h2 {
     animation-delay: 0.8s;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
+    border: none;
 }
 
 
@@ -112,19 +113,17 @@ h2 {
     margin-right: 15px;
     transform: translateY(-90px);
     left: 460px;
-    background-color: #66CDAA;
+    background-color: #800080;
     border-radius: 20px;
-    background-color: #66CDAA; /* Calm green shade */
-    color: #fff; /* White text for contrast */
+    color: #fff;
     font-family: Roboto;
-    font-size: 1rem; /* Readable font size */
-    font-weight: bold; /* Professional weight */
-    border-radius: 8px; /* Slightly smaller radius for a modern feel */
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px; /* Slightly smaller radius for a modern feel */
     border: none; /* Remove default border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add depth with a shadow */
+    box-shadow: 0 0 15px 4px rgba(255, 255, 245, 0.3); /* Add depth with a shadow */
     transition: all 0.3s ease; /* Smooth transitions for hover effect */
-    letter-spacing: 1px;
-
+    letter-spacing: 3px;
 }
 
 
@@ -135,13 +134,29 @@ h2 {
   float: left;
   align-items: center;
   width: 24rem;
-  height: 15rem;
+  height: 18rem;
   box-shadow: 0 0 17px 6px #FAEBD7;
   border-radius: 8px;
   padding: 4px;
   margin-left: 2rem;
   margin-right: 4rem;
 }
+
+@font-face {
+    font-family: 'Noto Sans Light';
+    src: url('../fonts/NotoSans-Light.ttf') format('truetype');
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'NotoSans Balinese Regular';
+    src: url('../fonts/NotoSansBalineseRegular.ttf') format('truetype');
+    font-style: normal;
+}
+
+
 
 .coursebox p {
     font-family: Noto Sans Light;
@@ -158,7 +173,7 @@ h2 {
 }
 
 .course-list .course-image {
-    max-width: 40%; /* Adjust the size as needed */
+    max-width: 30%; /* Adjust the size as needed */
     height: auto;
     margin-right: 1rem; /* Space between text and image */
 }
@@ -168,6 +183,18 @@ h2 {
     padding: 10px;
     border-radius: 5px;
     background-color: #FAEBD7;
+}
+
+h3 {
+    margin: 0;
+    font-family: Roboto;
+    color: #D88FD8;
+    font-size: 0.96rem;
+}
+
+h5 {
+    text-align: center;
+    color: #800080;
 }
 
 .registration {
@@ -187,16 +214,18 @@ form {
 }
 
 label {
-    margin: 5px 0;
+    margin: 8px 0;
 }
 
 input, select, button {
     padding: 10px;
     margin: 5px 0;
+    border: 1px solid #D88FD8;
+
 }
 
 button {
-    background: #333;
+    background: #D88FD8;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -209,9 +238,14 @@ button:hover {
 footer {
     text-align: center;
     padding: 10px 0;
-    background: #333;
+    background: #000;
     color: #fff;
     position: relative;
     bottom: 0;
     width: 100%;
 }
+
+/*.more {*/
+/*    position: relative;*/
+/*    left: 8px;*/
+/*}*/
