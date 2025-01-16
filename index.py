@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, url_for, send_from_directory
 from flask_mail import Mail, Message
 import json
 
+with open('clientsdata/clients.json', 'r') as file:
+    content = json.load(file)
 
 app = Flask(__name__)
 
@@ -10,14 +12,10 @@ app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = "wisdom.enefiok@dmarketforces.com"
 app.config['MAIL_PASSWORD'] = "12Hallmark1!"
-app.config['MAIL_DEFAULT_SENDER']=('DMarketForces','wisdom.enefiok@dmarketforces.com')
+app.config['MAIL_DEFAULT_SENDER']=('DXY-Trainings','wisdom.enefiok@dmarketforces.com')
 app.config['SECRET_KEY'] = "bossDatron24"
 
 mail = Mail(app)
-
-with open('clientsdata/clients.json', 'r') as file:
-    content = json.load(file)
-
 
 
 @app.route("/home")
@@ -39,6 +37,7 @@ def submitData():
          "Course": course,
          "Phone": phone,
          "Email": email}
+
     with open('clientsdata/clients.json','w') as file:
         content["data"].append(d)
         json.dump(content, file)
